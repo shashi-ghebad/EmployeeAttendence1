@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UC3_PartTimeEmpWage
+namespace UC4_UsingCaseStatement
 {
     class Program
     {
