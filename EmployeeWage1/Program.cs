@@ -1,26 +1,25 @@
 ﻿using System;
 
-namespace EmployeeWageNew
+namespace EmployeeWage1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int is_full_time = 1;
-            int emp_rate_per_hour = 20;
+            int IS_FULL_TIME = 1;
+            int EMP_RATE_PER_HOUR = 20;
             //variables
             int empHrs = 0;
             int empWage = 0;
             Random random = new Random();
             int empCheck = random.Next(0, 2);
-            if (empCheck == is_full_time)
+            if (empCheck == IS_FULL_TIME)
                 empHrs = 8;
             //else
-            //empHrs =8;
-            empWage = empHrs * emp_rate_per_hour;
-            Console.WriteLine("emp wage: "+empWage);
+            //empHrs = 8;
+            empWage = empHrs * EMP_RATE_PER_HOUR;
+            Console.WriteLine(" Emp Wage: " + empWage);
             Console.ReadKey();
-
         }
     }
 }
