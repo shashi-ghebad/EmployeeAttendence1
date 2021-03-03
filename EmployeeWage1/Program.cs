@@ -1,34 +1,30 @@
 ﻿using System;
 
-namespace UC4_UsingCaseStatement
+namespace UC5_MonthlyWage
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            const int is_part_time = 1;
-            const int is_full_time = 2;
-            int emp_rate_per_hour = 20;
-            //variables
-            int empHrs = 0;
+            int PRESENT = 1;
+            int Emp_Rate = 41;
+            int empHrs = 8;
             int empWage = 0;
+            int count = 0;
             Random random = new Random();
-            int empCheck = random.Next(0, 3);
-            switch (empCheck)
+            for (int i = 1; i <= 41; i++)
             {
-                case is_part_time:
-                    empHrs = 4;
-                    break;
-                case is_full_time:
-                    empHrs = 8;
-                    break;
-                default:
-                    empHrs = 0;
-                    break;
+                int empCheck = random.Next(0, 2);
+                if (empCheck == PRESENT)
+                {
+                    count++;
+
+                }
+
             }
-            empWage = empHrs * emp_rate_per_hour;
-            Console.WriteLine("emp wage: " + empWage);
-            Console.ReadKey();
+            empWage = count * empHrs * Emp_Rate;
+
+            Console.WriteLine("Employee Wages For " + count + " Working Days " + empWage);
         }
     }
 }
