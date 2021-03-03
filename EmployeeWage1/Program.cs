@@ -1,24 +1,33 @@
 ﻿using System;
 
-namespace EmployeeWage1
+namespace UC3_PartTimeEmpWage
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            int IS_FULL_TIME = 1;
-            int EMP_RATE_PER_HOUR = 20;
+            const int is_part_time = 1;
+            const int is_full_time = 2;
+            int emp_rate_per_hour = 20;
             //variables
             int empHrs = 0;
             int empWage = 0;
             Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            if (empCheck == IS_FULL_TIME)
-                empHrs = 8;
-            //else
-            //empHrs = 8;
-            empWage = empHrs * EMP_RATE_PER_HOUR;
-            Console.WriteLine(" Emp Wage: " + empWage);
+            int empCheck = random.Next(0, 3);
+            switch (empCheck)
+            {
+                case is_part_time:
+                    empHrs = 4;
+                    break;
+                case is_full_time:
+                    empHrs = 8;
+                    break;
+                default:
+                    empHrs = 0;
+                    break;
+            }
+            empWage = empHrs * emp_rate_per_hour;
+            Console.WriteLine("emp wage: " + empWage);
             Console.ReadKey();
         }
     }
